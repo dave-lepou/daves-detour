@@ -1,0 +1,270 @@
+/* ===== Base styles ===== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background-color: #f5f5f5;
+}
+
+/* Center main content card */
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 2rem 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== Layout ===== */
+
+header,
+main,
+footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+main {
+  background-color: #ffffff;
+  min-height: 60vh;
+}
+
+footer {
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666666;
+}
+
+/* ===== Typography ===== */
+
+h1,
+h2,
+h3 {
+  margin-top: 0;
+  color: #111111;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+p {
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Links ===== */
+
+a {
+  color: #0055aa;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Highlight name link slightly */
+#myNameColor {
+  font-weight: 600;
+}
+
+/* ===== Images ===== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Simple circular placeholder for profile photo */
+.profile-picture {
+  flex: 0 0 160px;
+  display: flex;
+  justify-content: center;
+}
+
+.profile-photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background-color: #e0e7ff;
+  border: 2px solid #cbd5ff;
+}
+
+/* ===== Lists ===== */
+
+ul,
+ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.25rem;
+}
+
+/* ===== Sections and boxes ===== */
+
+section {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eeeeee;
+}
+
+section:last-of-type {
+  border-bottom: none;
+}
+
+section div {
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  background-color: #fafafa;
+}
+
+/* ===== Small text elements ===== */
+
+span {
+  font-weight: 500;
+}
+
+/* ===== Top section layout (intro + profile) ===== */
+
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+/* ===== Welcome section with text + image side by side ===== */
+
+.welcome-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: center;
+}
+
+.welcome-text {
+  flex: 1 1 260px;
+}
+
+.welcome-image {
+  flex: 0 0 260px;
+}
+
+.welcome-image img {
+  border-radius: 8px;
+}
+
+/* ===== Posts columns (Tech/Core) ===== */
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.techList,
+.coreList {
+  flex: 1 1 280px;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #fafafa;
+  border: 1px solid #e0e0e0;
+}
+
+/* Make lists inside cards cleaner */
+.techList ul,
+.coreList ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.techList li,
+.coreList li {
+  margin-bottom: 0.5rem;
+}
+
+/* ===== Footer icons ===== */
+
+.footer-icons {
+  color: #666666;
+  text-decoration: none;
+}
+
+.footer-icons:hover {
+  color: #111111;
+}
+
+/* ===== Responsive tweaks ===== */
+
+@media (max-width: 700px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem 1.25rem;
+  }
+
+  .top-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .profile-picture {
+    align-self: center;
+  }
+
+  .posts {
+    flex-direction: column;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .welcome-image {
+    align-self: center;
+  }
+}
