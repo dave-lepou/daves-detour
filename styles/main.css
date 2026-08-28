@@ -18,7 +18,7 @@ body {
     'Segoe UI',
     sans-serif;
   line-height: 1.6;
-  color: #222;
+  color: #069a64;
   background-image: url('../images/background.png');
   background-repeat: no-repeat;
   background-size: cover;
@@ -30,7 +30,7 @@ body {
   max-width: 960px;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
-  background-color: #d4b262;
+  background-color: #f5cf76f7;
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
@@ -46,21 +46,21 @@ footer {
 }
 
 header {
-  background-color: #ffffff;
-  border-bottom: 1px solid #e0e0e0;
+  background-color: #f8d88ef7;
+  border-bottom: 1px solid #f3f6f5;
 }
 
 main {
-  background-color: #ffffff;
+  background-color: #f8d88ef7;
   min-height: 60vh;
 }
 
 footer {
-  background-color: #ffffff;
-  border-top: 1px solid #e0e0e0;
+  background-color: #f8d88ef7;
+  border-top: 1px solid #f2f7f6;
   text-align: center;
   font-size: 0.9rem;
-  color: #666666;
+  color: #047f5c;
 }
 
 /* ===== Typography ===== */
@@ -69,7 +69,7 @@ h1,
 h2,
 h3 {
   margin-top: 0;
-  color: #111111;
+  color: #047f5c;
 }
 
 h1 {
@@ -91,6 +91,10 @@ h3 {
 
 p {
   margin-bottom: 0.75rem;
+}
+
+.welcome-text span {
+  font-weight: bold;
 }
 
 /* ===== Links ===== */
@@ -129,8 +133,8 @@ img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: #e0e7ff;
-  border: 2px solid #cbd5ff;
+  background-color: #f8d88ef7;
+  border: 2px solid #f2f5f4;
 }
 
 /* ===== Lists ===== */
@@ -149,7 +153,7 @@ li {
 
 section {
   padding-bottom: 1rem;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #f4f7f6;
 }
 
 section:last-of-type {
@@ -159,9 +163,9 @@ section:last-of-type {
 section div {
   padding: 0.75rem;
   margin-bottom: 0.75rem;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #f3f7f6;
   border-radius: 4px;
-  background-color: #fafafa;
+  background-color: #f8d88ef7;
 }
 
 /* ===== Small text elements ===== */
@@ -213,8 +217,8 @@ span {
   flex: 1 1 280px;
   padding: 1rem;
   border-radius: 6px;
-  background-color: #fafafa;
-  border: 1px solid #e0e0e0;
+  background-color: #f8d88ef7;
+  border: 1px solid #00976a;
 }
 
 /* Make lists inside cards cleaner */
