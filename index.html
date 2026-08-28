@@ -1,10 +1,88 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
-    <title>The journey of Dave at Dev - Dave's Blog</title>
+    <!-- Character encoding - tells browser how to read the text -->
+    <meta charset="UTF-8" />
+
+    <!-- Page title - shows in browser tab -->
+    <title>Your Name - Dev Academy Blog</title>
+
+    <!-- Viewport meta tag makes your site responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+
   <body>
-    <h1>Talofa Lava! (Warm Greetings!)</h1> 
-    <p> This is the beginning of my website home page.</p>
-    <p> It will eventually contain a list of links to all my blogs. </p>
-    <a href="blog-posts/te-houtaewa-template.html">Te Houtaewa</a>
+    <!-- Header section - typically contains site title and intro -->
+    <header>
+      <!-- TODO: Add an h1 heading with your blog title -->
+      <h1>h1 Heading</h1>
+      <!-- TODO: Write your own introduction paragraph -->
+      <p>
+        This is a blog template. Look around and add or delete whatever you
+        like. Some of the green comments ask you to complete specific tasks. Try
+        viewing the page on different screen sizes using your browser’s
+        developer tools; if your stylesheet is connected properly, the page
+        should be responsive and have decent styling.
+      </p>
+    </header>
+
+    <!-- Main content area - contains the primary content of your page -->
+    <main>
+      <!-- Welcome/About section with text and image side by side -->
+      <section class="welcome-section">
+        <div class="welcome-text">
+          <h2>h2 heading</h2>
+          <p>paragraph</p>
+        </div>
+
+        <!-- Image container - add a photo of yourself or something you like -->
+        <div class="welcome-image">
+          <!-- TODO: Create an 'images' folder, add a photo, then uncomment and complete the line below -->
+          <!-- Example: <img src="images/profile.jpg" alt="Photo of your name" /> -->
+          <!-- TIP: Use alt text to describe the image for accessibility -->
+        </div>
+      </section>
+
+      <!-- Blog posts section - organize your blog post links -->
+      <section class="blog-section">
+        <h2>My Blog Posts</h2>
+
+        <!-- Technical blog posts -->
+        <div class="blog-category">
+          <h3>💻 Tech</h3>
+          <nav>
+            <ul>
+              <!-- Link to te-houtaewa-template.html -->
+              <li>
+                <a href="blog/te-houtaewa-template.html"
+                  >The Story of Te Houtaewa</a
+                >
+              </li>
+
+              <!-- TODO: Add links to your technical blog posts as you write them -->
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Core/Human Skills blog posts -->
+        <div class="blog-category">
+          <h3>🌱 Core</h3>
+          <nav>
+            <ul>
+              <!-- TODO: Add links to your core blog posts as you write them -->
+            </ul>
+          </nav>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer section - appears at bottom of every page -->
+    <footer>
+      <!-- TODO: Update with your name and current year -->
+      <p>&copy; 2025 Your Name</p>
+    </footer>
   </body>
 </html>
