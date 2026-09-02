@@ -23,6 +23,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
 /* Center main content card */
@@ -30,7 +32,7 @@ body {
   max-width: 960px;
   margin: 2rem auto;
   padding: 2rem 1.5rem;
-  background-color: #f5cf76f7;
+  background-color: transparent;
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
@@ -46,18 +48,19 @@ footer {
 }
 
 header {
-  background-color: #f8d88ef7;
-  border-bottom: 1px solid #f3f6f5;
+  background-color: transparent;
+  border-bottom: 10px double #679f8f;
+  text-align: center;
 }
 
 main {
-  background-color: #f8d88ef7;
+  background-color: transparent;
   min-height: 60vh;
 }
 
 footer {
-  background-color: #f8d88ef7;
-  border-top: 1px solid #f2f7f6;
+  background-color: transparent;
+  border-top: none; /* Removed white line */
   text-align: center;
   font-size: 0.9rem;
   color: #047f5c;
@@ -117,8 +120,8 @@ a:focus {
 /* ===== Images ===== */
 
 img {
-  max-width: 100%;
-  height: auto;
+  width: 280px;
+  height: 280px;
   display: block;
 }
 
@@ -133,8 +136,8 @@ img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
-  background-color: #f8d88ef7;
-  border: 2px solid #f2f5f4;
+  background-color: transparent;
+  border: none;
 }
 
 /* ===== Lists ===== */
@@ -153,19 +156,20 @@ li {
 
 section {
   padding-bottom: 1rem;
-  border-bottom: 1px solid #f4f7f6;
+  border-bottom: 10px double #679f8f;
 }
 
 section:last-of-type {
-  border-bottom: none;
+  border-bottom: 10px double #679f8f;
+  margin: 20px;
 }
 
 section div {
   padding: 0.75rem;
   margin-bottom: 0.75rem;
-  border: 1px solid #f3f7f6;
+  border: none; /* Removed white box borders */
   border-radius: 4px;
-  background-color: #f8d88ef7;
+  background-color: transparent;
 }
 
 /* ===== Small text elements ===== */
@@ -217,8 +221,8 @@ span {
   flex: 1 1 280px;
   padding: 1rem;
   border-radius: 6px;
-  background-color: #f8d88ef7;
-  border: 1px solid #00976a;
+  background-color: transparent;
+  border: 1px solid #00976a; /* Kept your green box borders intact */
 }
 
 /* Make lists inside cards cleaner */
@@ -245,33 +249,10 @@ span {
   color: #111111;
 }
 
-/* ===== Responsive tweaks ===== */
+.blog-section {
+  text-align: center;
+}
 
-@media (max-width: 700px) {
-  .container {
-    margin: 1rem;
-    padding: 1.5rem 1.25rem;
-  }
-
-  .top-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .profile-picture {
-    align-self: center;
-  }
-
-  .posts {
-    flex-direction: column;
-  }
-
-  .welcome-section {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .welcome-image {
-    align-self: center;
-  }
+.blog-category {
+  text-align: left;
 }
