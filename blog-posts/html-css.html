@@ -25,14 +25,14 @@
         products; and of different sizes. These boxes are the elements of each
         page - items that make up the webpage i.e images, text, videos etc. Now
         i think of the CSS box-model as boxes within and around these different
-        boxes and these 'smaller' (or bigger) boxes determine the space between
-        each of the boxes as well as the distance between the neighbouring boxes
-        in the warehouse. Using CSS rules, you can be deliberate and allocate
-        spaces inside and around these different boxes but you have to remember
-        when you are adding more space within and around the different boxes,
-        the overall size of the (let's call it main) box also increases from
-        items original size. There are four 'boxes' or areas in the CSS
-        box-model which are the
+        boxes (elements) and these smaller (or bigger) boxes determine the space
+        between each of the individual boxes (elements) as well as the distance
+        between the neighbouring boxes in the warehouse. Using CSS rules, you
+        can be deliberate and allocate space inside and around these different
+        boxes (elements) but you have to remember when you are adding more space
+        within and around them, the overall size of the "main" box also
+        increases from items original size. There are four 'boxes' or areas in
+        the CSS box-model which are the
         <span>CONTENT, PADDING, BORDER and MARGIN.</span> These four areas
         enable you to manipulate the space in and around individual elements.
       </p>
@@ -40,11 +40,35 @@
 
     <div class="question-two">
       <h3>What is the difference between Margin, Border and Padding?</h3>
-      <p>to write answer</p>
-      <p>
-        While Te Houtaewa was filling his baskets with kumara he was spotted
-        stealing the kai (food). He was immediately recognised.
+      <p>To understand the different you must first understand each of these key boxes and their "areas of responsibility"
+        <span>Padding:</span> affects the space around the content. 
+        <span>Border:</span> creates a border around the padding (within the combined area of padding and content) seperating the space between content/padding and margin.
+        <span>Margin:</span> this is the allocated space between neighbouring elemnts determening how 
+          close or how far the next element(s) are.
+          <span>The key difference between each is the allocated space. Padding is 
+          the space immediately around the content; border is seperates the space 
+          between padding and margin; and margin seperates the space between individual elements.
+        </span>
       </p>
+      </div>
+
+      <div class="question-three">
+      <h3>Questions that came up during my study / reasearch (and answers i found)</h3>
+      <p>
+      <span>How deliberate can you be when assigning values to the box-model? i.e. does it have to be even spacing? can you just allocate space for one side? or different sizes for each side?</span>
+      The answer i found through research was that you can definitely assign different values to these rules and there are different ways you can code them.
+      e.g. with Padding and Margin's you can simply write <span>margin: 0px 5px 10px 15px</span>
+      as an example. Writing this way assigns these different values to different sides of the margin, without
+      having to write out <span>margin-bottom; margin-left; margin;right; margin-top.</span> Instead
+      the code reads the first value (0px) as <span>TOP</span>; second (5px) as <span>RIGHT</span>;
+      third (10px) as <span>BOTTOM</span>; and fourth (15px) as <span>LEFT</span>. Note there are other ways to write this, this is just one way i found interesting.
+      Another note, boarders do not work the same in this sense. You have to allocate spaces directionally by identifying border sides, size, type of border and colour.
+      e.g. <span>border-bottom: (size)10px (type)solid (colour)white
+    </p>
+    <p>Next question-one
+    </p>
+    <p>last question-one
+    </p>
     </div>
     <!-- this is a comment. -->
   </body>
