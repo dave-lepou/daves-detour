@@ -1,5 +1,3 @@
-/* ===== Base styles ===== */
-
 * {
   box-sizing: border-box;
 }
@@ -8,6 +6,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -22,7 +22,6 @@ body {
   min-height: 100vh;
 }
 
-/* Center main content card */
 .container {
   max-width: 960px;
   margin: 2rem auto;
@@ -31,8 +30,6 @@ body {
   border-radius: 8px;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
 }
-
-/* ===== Layout ===== */
 
 header,
 main,
@@ -58,13 +55,11 @@ main {
 
 footer {
   background-color: transparent;
-  border-top: none; /* Removed white line */
+  border-top: none;
   text-align: center;
   font-size: 0.9rem;
   color: #047f5c;
 }
-
-/* ===== Typography ===== */
 
 h1,
 h2 {
@@ -98,8 +93,6 @@ p {
   font-weight: bold;
 }
 
-/* ===== Links ===== */
-
 a {
   color: #9acbfc;
   text-decoration: none;
@@ -110,20 +103,16 @@ a:focus {
   text-decoration: underline;
 }
 
-/* Highlight name link slightly */
 #myNameColor {
   font-weight: 600;
 }
 
-/* ===== Images ===== */
-
 img {
-  width: 320px;
-  height: 350px;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
-/* Simple circular placeholder for profile photo */
 .profile-picture {
   flex: 0 0 160px;
   display: flex;
@@ -138,8 +127,6 @@ img {
   border: none;
 }
 
-/* ===== Lists ===== */
-
 ul,
 ol {
   padding-left: 1.5rem;
@@ -150,8 +137,6 @@ li {
   margin-bottom: 0.25rem;
 }
 
-/* ===== Sections and boxes ===== */
-
 section {
   padding-bottom: 1rem;
   border-bottom: 10px double #679f8f;
@@ -159,24 +144,21 @@ section {
 
 section:last-of-type {
   border-bottom: 10px double #679f8f;
-  margin: 20px;
+  margin: 20px 0;
 }
 
 section div {
   padding: 0.75rem;
   margin-bottom: 0.75rem;
-  border: none; /* Removed white box borders */
+  border: none;
   border-radius: 4px;
   background-color: transparent;
 }
 
-/* ===== Small text elements ===== */
-
 span {
-  font-weight: 500;
+  font-weight: bold;
+  color: black;
 }
-
-/* ===== Top section layout (intro + profile) ===== */
 
 .top-section {
   display: flex;
@@ -184,8 +166,6 @@ span {
   gap: 2rem;
   align-items: center;
 }
-
-/* ===== Welcome section with text + image side by side ===== */
 
 .welcome-section {
   display: flex;
@@ -222,10 +202,9 @@ span {
   padding: 1rem;
   border-radius: 6px;
   background-color: transparent;
-  border: 1px solid #00976a; /* Kept your green box borders intact */
+  border: 1px solid #00976a;
 }
 
-/* Make lists inside cards cleaner */
 .techList ul,
 .coreList ul {
   list-style: none;
@@ -259,66 +238,95 @@ span {
 
 .topic-intro {
   padding: 10px;
-  margin: 10px;
+  margin: 10px 0;
   border-bottom: 10px double #679f8f;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
 }
 
-.question-one {
-  padding: 20px;
-  background-color: aliceblue;
-  border-radius: 20px;
-  margin: 30px;
-  font-family:
-    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-
-.question-two {
-  padding: 20px;
-  background-color: aliceblue;
-  border-radius: 20px;
-  margin: 30px;
-  font-family:
-    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
-    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-align: center;
-}
-
+.question-one,
+.question-two,
 .question-three {
   padding: 20px;
   background-color: aliceblue;
   border-radius: 20px;
-  margin: 30px;
+  margin: 30px 0;
   font-family:
     'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
     'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   text-align: center;
 }
 
-span {
-  font-weight: bold;
-  color: black;
-}
-
 .home-button {
   text-align: center;
-  margin: 10px;
+  margin: 20px 0;
 }
 
 .home-button button {
   background-color: #5debc0;
   color: #047f5c;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
 }
 
 .home-button button:hover {
   background-color: #c7a529;
   color: #ffffff;
+}
+
+@media (max-width: 960px) {
+  header,
+  main,
+  footer,
+  .container {
+    padding: 1rem;
+    max-width: 100%;
+  }
+
+  .question-one,
+  .question-two,
+  .question-three {
+    margin: 20px 0;
+    padding: 20px;
+    width: 100%;
+  }
+
+  section:last-of-type {
+    margin: 20px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h3 {
+    font-size: 1.1rem;
+  }
+
+  .topic-intro {
+    margin: 5px 0;
+    padding: 5px;
+  }
+
+  .question-one,
+  .question-two,
+  .question-three {
+    margin: 15px 0;
+    padding: 15px;
+  }
+
+  .home-button button {
+    width: 100%;
+    padding: 14px 0;
+  }
 }
