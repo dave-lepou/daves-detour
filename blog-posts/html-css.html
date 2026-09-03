@@ -20,54 +20,42 @@
     <div class="question-one">
       <h3>What is the CSS box-model?</h3>
       <p>
-        The way i understood this is i had to create a picture analogy. Where a
-        webpage is like a big warehouse that holds different boxes; of different
-        products; and of different sizes. These boxes are the elements of each
-        page - items that make up the webpage i.e images, text, videos etc. Now
-        i think of the CSS box-model as boxes within and around these different
-        boxes (elements) and these smaller (or bigger) boxes determine the space
-        between each of the individual boxes (elements) as well as the distance
-        between the neighbouring boxes in the warehouse. Using CSS rules, you
-        can be deliberate and allocate space inside and around these different
-        boxes (elements) but you have to remember when you are adding more space
-        within and around them, the overall size of the "main" box also
-        increases from items original size. There are four 'boxes' or areas in
-        the CSS box-model which are the
-        <span>CONTENT, PADDING, BORDER and MARGIN.</span> These four areas
-        enable you to manipulate the space in and around individual elements.
+        The best way to understand this is through a picture analogy. Imagine a webpage as a big warehouse that holds different boxes of various products and sizes. These boxes are the elements of each page—the items that make up the website, such as text, images, and videos.
       </p>
+
+      <p>
+        Now, think of the CSS Box Model as extra layers of boxes wrapped within and around these main product boxes. These layers determine the space inside the box as well as the distance between neighboring boxes in the warehouse. Using CSS rules, you can be deliberate and allocate space inside and around these elements. However, you must remember that when you add space around the product, the overall size of the main box grows beyond the original item size!</p>
+      </p>
+
+      <p><span>CONTENT:</span> The actual item inside the box i.e. your text, images, videos etc.</p>
+    <p><span>PADDING:</span> The space immediately surrounding the content.</p>
+    <p><span>BORDER:</span> The outer frame wrapping around the content and padding (separating the space between padding and margin).</p>
+    <p><span>MARGIN:</span> The space outside of the border that pushes away neighbouring boxes.</p> 
     </div>
 
     <div class="question-two">
       <h3>What is the difference between Margin, Border and Padding?</h3>
-      <p>To understand the different you must first understand each of these key boxes and their "areas of responsibility"
-        <span>Padding:</span> affects the space around the content. 
-        <span>Border:</span> creates a border around the padding (within the combined area of padding and content) seperating the space between content/padding and margin.
-        <span>Margin:</span> this is the allocated space between neighbouring elemnts determening how 
-          close or how far the next element(s) are.
-          <span>The key difference between each is the allocated space. Padding is 
-          the space immediately around the content; border is seperates the space 
-          between padding and margin; and margin seperates the space between individual elements.
-        </span>
-      </p>
+      <p>To understand the different you must first understand each of these key boxes' specific "areas of responsibility"</p>
+      <p><span>Padding:</span> affects the space around the content (sharing the same background colour as the element / content)</p>  
+      <p><span>Border:</span> Acts as the outer frame around the element + padding, separating them from the margin (outer space)</p>  
+      <p><span>Margin:</span> The allocated space between neighbouring elements which determines how close / far away they sit. </p>  
+      <p>The key difference between the three comes down to <span>location.</span> Padding is the space inside the border; the border is the frame around it; and margin is he space outside the border that keeps other elements at a distance.</p> 
       </div>
 
       <div class="question-three">
-      <h3>Questions that came up during my study / reasearch (and answers i found)</h3>
+      <h3>Questions that came up during my reasearch (and answers i found)</h3>
       <p>
-      <span>How deliberate can you be when assigning values to the box-model? i.e. does it have to be even spacing? can you just allocate space for one side? or different sizes for each side?</span>
-      The answer i found through research was that you can definitely assign different values to these rules and there are different ways you can code them.
-      e.g. with Padding and Margin's you can simply write <span>margin: 0px 5px 10px 15px</span>
-      as an example. Writing this way assigns these different values to different sides of the margin, without
-      having to write out <span>margin-bottom; margin-left; margin;right; margin-top.</span> Instead
-      the code reads the first value (0px) as <span>TOP</span>; second (5px) as <span>RIGHT</span>;
-      third (10px) as <span>BOTTOM</span>; and fourth (15px) as <span>LEFT</span>. Note there are other ways to write this, this is just one way i found interesting.
-      Another note, boarders do not work the same in this sense. You have to allocate spaces directionally by identifying border sides, size, type of border and colour.
-      e.g. <span>border-bottom: (size)10px (type)solid (colour)white
-    </p>
-    <p>Next question-one
-    </p>
-    <p>last question-one
+      <span>1. How deliberate can you be when assigning values? Does spacing have to be even on all sides?</span>
+      </p>
+      <p>Not at all! You can assign custom values to each individual side. One way i learned is using <span>CSS shorthand.</span> Instead of writing four separate rules for top, right, bottom and left, you can write: </p>
+      <p><span>margin: 0px (=TOP) 5px (=RIGHT) 10px (=BOTTOM) 15px (=LEFT);</span></p>
+      <p>The ways i learned to remember how the browser reads this are to think of a clock and work clockwise from Top-Right-Bottom-Left; or remember the acronym <span>TRBL</span> (read it as the word <span>"TROUBLE"</span>)</p>
+    
+    <p><span>2. Do borders work the exact same way as margins and padding?</span></p>
+    <p>Not quite. Borders require a bit more detail because you need to specify three properties for the line to display correctly: <span>size, style, colour.</span>
+      FOrf e.g. if you only require a line along the bottom of an element, you would write: <span>border-bottom: 10px solid white;</span>
+    
+      <p>last question-one
     </p>
     </div>
     <!-- this is a comment. -->
