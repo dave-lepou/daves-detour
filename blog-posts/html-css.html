@@ -10,56 +10,131 @@
     <div class="topic-intro">
       <h1>The CSS Box Model - Content, Padding, Border and Margin</h1>
       <h2>
-        In this blog, I am going to discuss three main points. First, i'll will
-        explain the CSS Box Model; secondly, i will talk about the differences
-        between padding, border and margin; and thirdly, i will share some
-        questions i had in my study and research and some answers i found!
+        In this blog, I am going to discuss three main points. First, I'll
+        explain the CSS Box Model; secondly, I will talk about the differences
+        between padding, border and margin; and thirdly, I will share some
+        questions I had in my study and research and some answers I found!
       </h2>
     </div>
 
     <div class="question-one">
       <h3>What is the CSS box-model?</h3>
       <p>
-        The best way to understand this is through a picture analogy. Imagine a webpage as a big warehouse that holds different boxes of various products and sizes. These boxes are the elements of each page—the items that make up the website, such as text, images, and videos.
+        The best way to understand this is through a picture analogy. Imagine a
+        webpage as a big warehouse that holds different boxes of various
+        products and sizes. These boxes are the elements of each page—the items
+        that make up the website, such as text, images, and videos.
       </p>
 
       <p>
-        Now, think of the CSS Box Model as extra layers of boxes wrapped within and around these main product boxes. These layers determine the space inside the box as well as the distance between neighboring boxes in the warehouse. Using CSS rules, you can be deliberate and allocate space inside and around these elements. However, you must remember that when you add space around the product, the overall size of the main box grows beyond the original item size!</p>
+        Now, think of the CSS Box Model as extra layers of boxes wrapped within
+        and around these main product boxes. These layers determine the space
+        inside the box as well as the distance between neighboring boxes in the
+        warehouse. Using CSS rules, you can be deliberate and allocate space
+        inside and around these elements. However, you must remember that when
+        you add space around the product, the overall size of the main box grows
+        beyond the original item size!
       </p>
 
-      <p><span>CONTENT:</span> The actual item inside the box i.e. your text, images, videos etc.</p>
-    <p><span>PADDING:</span> The space immediately surrounding the content.</p>
-    <p><span>BORDER:</span> The outer frame wrapping around the content and padding (separating the space between padding and margin).</p>
-    <p><span>MARGIN:</span> The space outside of the border that pushes away neighbouring boxes.</p> 
+      <p>
+        <span>CONTENT:</span> The actual item inside the box i.e. your text,
+        images, videos etc.
+      </p>
+      <p>
+        <span>PADDING:</span> The space immediately surrounding the content.
+      </p>
+      <p>
+        <span>BORDER:</span> The outer frame wrapping around the content and
+        padding (separating the space between padding and margin).
+      </p>
+      <p>
+        <span>MARGIN:</span> The space outside of the border that pushes away
+        neighbouring boxes.
+      </p>
     </div>
 
     <div class="question-two">
       <h3>What is the difference between Margin, Border and Padding?</h3>
-      <p>To understand the different you must first understand each of these key boxes' specific "areas of responsibility"</p>
-      <p><span>Padding:</span> affects the space around the content (sharing the same background colour as the element / content)</p>  
-      <p><span>Border:</span> Acts as the outer frame around the element + padding, separating them from the margin (outer space)</p>  
-      <p><span>Margin:</span> The allocated space between neighbouring elements which determines how close / far away they sit. </p>  
-      <p>The key difference between the three comes down to <span>location.</span> Padding is the space inside the border; the border is the frame around it; and margin is he space outside the border that keeps other elements at a distance.</p> 
-      </div>
-
-      <div class="question-three">
-      <h3>Questions that came up during my reasearch (and answers i found)</h3>
       <p>
-      <span>1. How deliberate can you be when assigning values? Does spacing have to be even on all sides?</span>
+        To understand the difference you must first understand each of these key
+        boxes' specific "areas of responsibility"
       </p>
-      <p>Not at all! You can assign custom values to each individual side. One way i learned is using <span>CSS shorthand.</span> Instead of writing four separate rules for top, right, bottom and left, you can write: </p>
-      <p><span>margin: 0px (=TOP) 5px (=RIGHT) 10px (=BOTTOM) 15px (=LEFT);</span></p>
-      <p>The ways i learned to remember how the browser reads this are to think of a clock and work clockwise from Top-Right-Bottom-Left; or remember the acronym <span>TRBL</span> (read it as the word <span>"TROUBLE"</span>)</p>
-    
-    <p><span>2. Do borders work the exact same way as margins and padding?</span></p>
-    <p>Not quite. Borders require a bit more detail because you need to specify three properties for the line to display correctly: <span>size, style, colour.</span>
-      FOrf e.g. if you only require a line along the bottom of an element, you would write: <span>border-bottom: 10px solid white;</span>
-    
-      <p><span>3. Are borders always rectangular and solid?</span>
-    </p>
-    <p>No. There are different shapes you can use as borders. For e.g if you required a rounded border you would use the CSS rule: <span>border-radius: 10px;</span></p>
-    <p>There are also different styled borders you can use. For e.g there is a <span>dashed border; double border; and a few more.</span> This feature enahnces your ability to personalise each element further and style your page as you wish!</p>
+      <p>
+        <span>Padding:</span> affects the space around the content (sharing the
+        same background colour as the element / content)
+      </p>
+      <p>
+        <span>Border:</span> Acts as the outer frame around the element +
+        padding, separating them from the margin (outer space)
+      </p>
+      <p>
+        <span>Margin:</span> The allocated space between neighbouring elements
+        which determines how close / far away they sit.
+      </p>
+      <p>
+        The key difference between the three comes down to
+        <span>location.</span> Padding is the space inside the border; the
+        border is the frame around it; and margin is the space outside the
+        border that keeps other elements at a distance.
+      </p>
     </div>
-    
+
+    <div class="question-three">
+      <h3>Questions that came up during my research (and answers I found)</h3>
+      <p>
+        <span
+          >1. How deliberate can you be when assigning values? Does spacing have
+          to be even on all sides?</span
+        >
+      </p>
+      <p>
+        Not at all! You can assign custom values to each individual side. One
+        way I learned is using <span>CSS shorthand.</span> Instead of writing
+        four separate rules for top, right, bottom and left, you can write:
+      </p>
+      <p>
+        <span
+          >margin: 0px (=TOP) 5px (=RIGHT) 10px (=BOTTOM) 15px (=LEFT);</span
+        >
+      </p>
+      <p>
+        The ways I learned to remember how the browser reads this are to think
+        of a clock and work clockwise from Top-Right-Bottom-Left; or remember
+        the acronym <span>TRBL</span> (read it as the word
+        <span>"TROUBLE"</span>)
+      </p>
+
+      <p>
+        <span
+          >2. Do borders work the exact same way as margins and padding?</span
+        >
+      </p>
+      <p>
+        Not quite. Borders require a bit more detail because you need to specify
+        three properties for the line to display correctly:
+        <span>size, style, colour.</span> For e.g. if you only require a line
+        along the bottom of an element, you would write:
+        <span>border-bottom: 10px solid white;</span>
+      </p>
+
+      <p><span>3. Are borders always rectangular and solid?</span></p>
+      <p>
+        No. There are different shapes you can use as borders. For e.g if you
+        required a rounded border you would use the CSS rule:
+        <span>border-radius: 10px;</span>
+      </p>
+      <p>
+        There are also different styled borders you can use. For e.g there is a
+        <span>dashed border; double border; and a few more.</span> This feature
+        enhances your ability to personalise each element further and style your
+        page as you wish!
+      </p>
+    </div>
+
+    <div class="home-button">
+      <a href="index.html">
+        <button type="button">Back to Home</button>
+      </a>
+    </div>
   </body>
 </html>
