@@ -270,6 +270,21 @@ span {
   text-align: center;
 }
 
+.JS,
+.control-flow,
+.DOM,
+.array-objects,
+.Functions {
+  padding: 20px;
+  background-color: aliceblue;
+  border-radius: 20px;
+  margin: 30px 0;
+  font-family:
+    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
 .home-button {
   text-align: center;
   margin: 20px 0;
@@ -305,7 +320,12 @@ span {
   .question-three,
   .EQ,
   .EQ-vs-IQ,
-  .EQ-in-learning {
+  .EQ-in-learning,
+  .JS,
+  .control-flow,
+  .DOM,
+  .array-objects,
+  .Functions {
     margin: 20px 0;
     padding: 20px;
     width: 100%;
@@ -339,7 +359,12 @@ span {
   .question-three,
   .EQ,
   .EQ-vs-IQ,
-  .EQ-in-learning {
+  .EQ-in-learning,
+  .JS,
+  .control-flow,
+  .DOM,
+  .array-objects,
+  .Functions {
     margin: 15px 0;
     padding: 15px;
   }
