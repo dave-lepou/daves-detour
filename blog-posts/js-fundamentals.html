@@ -58,26 +58,51 @@
       </p>
     </div>
 
-    <div class="EQ-in-learning">
-      <h3>
-        Why does EQ matter to me - in learning and in the tech environment?
-      </h3>
+    <div class="DOM">
+      <h3>The DOM (Document Object Model)</h3>
       <p>
-        I've always thought of it this way,: EQ is essential because technical
-        knowledge and strategy (IQ) can only take a team so far; it is the human
-        element that determines how effectively a team executes its goals. While
-        technical skills can be learned through training, EQ provides the
-        foundational environment for those skills to thrive. The most effective
-        leaders recognize that team members are not just task-executors, but
-        individuals driven by distinct motivations, perspectives and emotional
-        needs. By consistently practicing self-awareness and empathy, leaders
-        nurture an environment of trust and mutual respect. Ultimately, EQ
-        matters because it transforms individual talent into collective strength
-        - fostering resilience, safe conflict resolution and sustainable
-        success.
+        The DOM is the browser's live / interactive representation of your HTML
+        file. Going back to an earlier analogy about building a home, think of
+        HTML as the blueprint and the DOM as the physical house built that you
+        see IRL (or in this case on the webpage). The DOM also creates what we
+        call "nodes" which simply means that DOM turns everything on the webpage
+        - a heading, a paragraph, buttons, text etc. into an individual node so
+        JS can find it and change it. WHich is how you interact with DOM - using
+        JS in two simple steps:
+        <span
+          >1. Finding the node: You ask JS to locate a specific element on the
+          page (e.g., document.querySelector('#submit-btn')). 2. Cange it!: You
+          change its properties or listen for user actions (e.g. changing the
+          button text to "Chur Bro..." or listening for when a user clicks
+          it).</span
+        >
       </p>
     </div>
 
+    <div class="array-objects">
+      <h3>Arrays and Objects - How data is accessed</h3>
+      <p>
+        <span>Objects (Access by Name / "Key"):</span> Objects store data in
+        labeled key-value pairs, i like to think of my passport that has keys
+        and values i.e. the label and the information
+        <span
+          >e.g. Key: First Name > Value: Dave / Key: Age > Value: 21 (LOL)
+          etc.</span
+        >
+        When you want to find my age you don't have to guess where in the list
+        it is, because you already know the label (key = Age), you would then
+        write: user.age.
+
+        <span>Arrays (Access by Position / Index):</span> Arrays store an
+        ordered list of items, like a queue of people standing in line. You
+        access items based on their exact numerical position starting at index 0
+        (e.g., colors[0] gets the first item in the list).
+        <span>Loops (for):</span> These repeat an action until a specific
+        condition changes. Example: You keep eating a bag of chips while there
+        are still chips left in the bag. Once the bag is empty (condition
+        becomes false), you stop.
+      </p>
+    </div>
     <div class="home-button">
       <a href="index.html">
         <button type="button">Back to Home</button>
