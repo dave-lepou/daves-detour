@@ -31,11 +31,11 @@
         layout etc.
 
         <span>JavaScript (The functionality and property manager):</span> This
-        is the plumbing, electrical works etc. It controls how the page behaves
-        when a user interacts with it. Beyond adding behavior, JS acts as the
-        "property manager", it can step in to repaint a ceiling, knock down wall
-        or build an entirely new section on the fly without needing to rewrite
-        the original "blueprint".
+        is the plumbing, electrical works i.e. etc. It controls how the page
+        behaves when a user interacts with it. Beyond adding behavior, JS acts
+        as the "property manager", it can step in to repaint a ceiling, knock
+        down wall or build an entirely new section on the fly without needing to
+        rewrite the original "blueprint".
       </p>
     </div>
 
@@ -71,10 +71,13 @@
         JS in two simple steps:
         <span
           >1. Finding the node: You ask JS to locate a specific element on the
-          page (e.g., document.querySelector('#submit-btn')). 2. Cange it!: You
-          change its properties or listen for user actions (e.g. changing the
-          button text to "Chur Bro..." or listening for when a user clicks
-          it).</span
+          page (e.g. <code>document.querySelector('#submit-btn')</code>). 2.
+          Change it!: You change its properties or listen for user actions (e.g.
+          changing the button text to "Chur Bro..." would look like
+          <code
+            >/document.querySelector('#submit-btn').innerHTML= Chur Bro</code
+          >
+          or listening for when a user clicks it).</span
         >
       </p>
     </div>
@@ -115,6 +118,17 @@
         smoothie it makes for you! Functions are very useful because of
         reusability! Instead of having to write twenty lines of code for the
         same thing, you write the logic once and "call it" whenever you need it.
+
+        <span>Here's what a wee look at what the code can look like:</span>
+        We first have to define the machine and ingredients; then process the
+        ingredients to finnally get the desired return of a completed, delicious
+        smoothie!
+
+        <code
+          >function makeSmoothie(berry, fruit, liquid) { let smoothie = 'A
+          delicious blend of ' + berry + ', ' + fruit + ', and ' + liquid + '!'
+          return smoothie }</code
+        >
       </p>
     </div>
 
