@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Blog Post 3 - JavaScript Fundamentals</title>
     <meta charset="UTF-8" />
@@ -8,134 +8,156 @@
   </head>
 
   <body>
-    <div class="topic-intro">
+    <header class="topic-intro">
       <h1>JavaScript (JS) Fundamentals</h1>
-      <h2>
-        In this blog, I'm sharing my understanding of the JS Fundamentals where
-        i will explore different aspects of JS and how i understand it. I'll
-        talk about JS and its relationship with HTML & CSS; Control FLows; The
-        DOM; Arrays and Objects; and Functions!
-      </h2>
-    </div>
-
-    <div class="JS">
-      <h3>JavaScript and its Relationship to HTML and CSS</h3>
       <p>
-        To understand how a web page works, imagine building a house:
-        <span>HTML (The structure):</span> This is the frame, gib and
-        foundation. It dictates what is on a webpage, like text, buttons, images
-        etc.
-
-        <span>CSS (The appearance):</span> This is the paint, wallpaper and
-        furnishings. It controls how the structure looks. Its colours, fonts,
-        layout etc.
-
-        <span>JavaScript (The functionality and property manager):</span> This
-        is the plumbing, electrical works i.e. etc. It controls how the page
-        behaves when a user interacts with it. Beyond adding behavior, JS acts
-        as the "property manager", it can step in to repaint a ceiling, knock
-        down wall or build an entirely new section on the fly without needing to
-        rewrite the original "blueprint".
+        In this blog, I'm sharing my understanding of JS Fundamentals where I
+        will explore different aspects of JS and how I understand it. I'll talk
+        about JS and its relationship with HTML & CSS, Control Flow, the DOM,
+        Arrays & Objects, and Functions!
       </p>
-    </div>
+    </header>
 
-    <div class="control-flow">
-      <h3>Control Flo and Loops</h3>
-      <p>
-        Control flow is simply the order in which a computer executes code. By
-        using conditions (checking if something is true or false), you can
-        control which paths your code takes or repeat certain steps.
+    <main>
+      <article>
+        <section class="JS">
+          <h2>JavaScript and its Relationship to HTML and CSS</h2>
+          <p>To understand how a webpage works, imagine building a house:</p>
+          <p>
+            <span>HTML (The structure):</span> This is the frame, gib, and
+            foundation. It dictates what is on a webpage, like text, buttons,
+            images, etc.
+          </p>
+          <p>
+            <span>CSS (The appearance):</span> This is the paint, wallpaper, and
+            furnishings. It controls how the structure looks—its colors, fonts,
+            layout, etc.
+          </p>
+          <p>
+            <span>JavaScript (The functionality and property manager):</span>
+            This is the plumbing, electrical works, etc. It controls how the
+            page behaves when a user interacts with it. Beyond adding behavior,
+            JS acts as the "property manager"—it can step in to repaint a
+            ceiling, knock down a wall, or build an entirely new section on the
+            fly without needing to rewrite the original "blueprint".
+          </p>
+        </section>
 
-        <span>Conditionals (if / else):</span> These are decision branches.
-        Think of ordering food: Am I hungry? <span>Yes</span> > Is there food at
-        home? <span>No</span> > Is it past midnight? <span>No</span> >
-        <span>Order Uber Eats!</span>
+        <section class="control-flow">
+          <h2>Control Flow and Loops</h2>
+          <p>
+            Control flow is simply the order in which a computer executes code.
+            By using conditions (checking if something is true or false), you
+            can control which paths your code takes or repeat certain steps.
+          </p>
+          <p>
+            <span>Conditionals (if / else):</span> These are decision branches.
+            Think of ordering food: Am I hungry? <span>Yes</span>; Is there food
+            at home? <span>No</span>; Is it past midnight? <span>No</span>;
+            <span>Order Uber Eats!</span>
+          </p>
+          <p>
+            <span>Loops (for):</span> These repeat an action until a specific
+            condition changes. Example: You keep eating a bag of chips while
+            there are still chips left in the bag. Once the bag is empty
+            (condition becomes false), you stop.
+          </p>
+        </section>
 
-        <span>Loops (for):</span> These repeat an action until a specific
-        condition changes. Example: You keep eating a bag of chips while there
-        are still chips left in the bag. Once the bag is empty (condition
-        becomes false), you stop.
-      </p>
-    </div>
+        <section class="DOM">
+          <h2>The DOM (Document Object Model)</h2>
+          <p>
+            The DOM is the browser's live/interactive representation of your
+            HTML file. Going back to an earlier analogy about building a home,
+            think of HTML as the blueprint and the DOM as the physical house
+            built that you see IRL (or in this case, on the webpage).
+          </p>
+          <p>
+            The DOM also creates what we call "nodes", which simply means that
+            the DOM turns everything on the webpage—a heading, a paragraph,
+            buttons, text, etc.—into an individual node so JS can find it and
+            change it. You interact with the DOM using JS in two simple steps:
+          </p>
+          <p>
+            <span>1. Finding the node:</span> You ask JS to locate a specific
+            element on the page (e.g.,
+            <code>document.querySelector('#submit-btn')</code>).
+          </p>
+          <p>
+            <span>2. Change it!:</span> You change its properties or listen for
+            user actions (e.g., changing the button text to "Chur Bro..." would
+            look like
+            <code
+              >document.querySelector('#submit-btn').innerHTML = 'Chur
+              Bro'</code
+            >
+            or listening for when a user clicks it).
+          </p>
+        </section>
 
-    <div class="DOM">
-      <h3>The DOM (Document Object Model)</h3>
-      <p>
-        The DOM is the browser's live / interactive representation of your HTML
-        file. Going back to an earlier analogy about building a home, think of
-        HTML as the blueprint and the DOM as the physical house built that you
-        see IRL (or in this case on the webpage). The DOM also creates what we
-        call "nodes" which simply means that DOM turns everything on the webpage
-        - a heading, a paragraph, buttons, text etc. into an individual node so
-        JS can find it and change it. WHich is how you interact with DOM - using
-        JS in two simple steps:
-        <span
-          >1. Finding the node: You ask JS to locate a specific element on the
-          page (e.g. <code>document.querySelector('#submit-btn')</code>). 2.
-          Change it!: You change its properties or listen for user actions (e.g.
-          changing the button text to "Chur Bro..." would look like
-          <code
-            >/document.querySelector('#submit-btn').innerHTML= Chur Bro</code
-          >
-          or listening for when a user clicks it).</span
-        >
-      </p>
-    </div>
+        <section class="array-objects">
+          <h2>Arrays and Objects - How Data is Accessed</h2>
+          <p>
+            <span>Objects (Access by Name / "Key"):</span> Objects store data in
+            labeled key-value pairs. I like to think of my passport that has
+            keys and values, i.e., the label and the information (e.g., Key:
+            First Name ; Value: Dave / Key: Age; Value: 21 LOL). When you want
+            to find my age, you don't have to guess where in the list it is
+            because you already know the label (key = Age); you would write
+            <code>user.age</code>.
+          </p>
+          <p>
+            <span>Arrays (Access by Position / Index):</span> Arrays store an
+            ordered list of items, like a queue of people standing in line. You
+            access items based on their exact numerical position starting at
+            index 0 (e.g., <code>colors[0]</code> gets the first item in the
+            list).
+          </p>
+        </section>
 
-    <div class="array-objects">
-      <h3>Arrays and Objects - How data is accessed</h3>
-      <p>
-        <span>Objects (Access by Name / "Key"):</span> Objects store data in
-        labeled key-value pairs, i like to think of my passport that has keys
-        and values i.e. the label and the information
-        <span
-          >e.g. Key: First Name > Value: Dave / Key: Age > Value: 21 (LOL)
-          etc.</span
-        >
-        When you want to find my age you don't have to guess where in the list
-        it is, because you already know the label (key = Age), you would then
-        write: user.age.
+        <section class="Functions">
+          <h2>Functions: What They Are and Why They Are Useful!</h2>
+          <p>
+            The simplest way to understand what a function is, is to imagine it
+            like a self-contained machine designed to perform a specific task.
+            This machine has two main components:
+            <span>the inputs (parameters)</span>, i.e., the raw ingredients you
+            put inside the machine, and
+            <span>the outputs (the return value)</span>, i.e., the finished
+            product the machine hands back to you.
+          </p>
+          <p>
+            Imagine you are craving a smoothie, so you grab a blender to make
+            one. The function is the blender settings (set to smoothie), the
+            parameters are the berries, banana, milk, etc., you throw in, and
+            the return value is the finished smoothie it makes for you!
+            Functions are very useful because of reusability. Instead of having
+            to write twenty lines of code for the same thing, you write the
+            logic once and "call it" whenever you need it.
+          </p>
+          <p>
+            <span>Here's a wee look at what the code can look like:</span>
+            We first define the machine and ingredients, then process the
+            ingredients to finally get the desired return of a completed,
+            delicious smoothie!
+          </p>
 
-        <span>Arrays (Access by Position / Index):</span> Arrays store an
-        ordered list of items, like a queue of people standing in line. You
-        access items based on their exact numerical position starting at index 0
-        (e.g., colors[0] gets the first item in the list).
-      </p>
-    </div>
+          <pre><code>function makeSmoothie(berry, fruit, liquid) {
+  let smoothie = 'A delicious blend of ' + berry + ', ' + fruit + ', and ' + liquid + '!'
+  return smoothie
+}</code></pre>
+        </section>
+      </article>
 
-    <div class="Functions">
-      <h3>Functions: What they are and why they are useful!</h3>
-      <p>
-        The simplest way to understand what a function is, is to imagine it like
-        a self-contained machine designed to perform a specific task. This
-        machine has two main components,
-        <span>the inputs (paramenters)</span> i.e. the raw ingredients you put
-        inside the machine and <span>the outputs, the return value</span> i.e.
-        the finished product the machine hands back to you. Imagine you are
-        craving a smoothie, so you grab a blender to make one. Functions is the
-        blender settings (set to smoothie), the parameters are the berries,
-        banana, milk etc. you throw in and the return value is the finished
-        smoothie it makes for you! Functions are very useful because of
-        reusability! Instead of having to write twenty lines of code for the
-        same thing, you write the logic once and "call it" whenever you need it.
+      <nav class="home-button">
+        <a href="../index.html">
+          <button type="button">Back to Home</button>
+        </a>
+      </nav>
+    </main>
 
-        <span>Here's what a wee look at what the code can look like:</span>
-        We first have to define the machine and ingredients; then process the
-        ingredients to finnally get the desired return of a completed, delicious
-        smoothie!
-
-        <code
-          >function makeSmoothie(berry, fruit, liquid) { let smoothie = 'A
-          delicious blend of ' + berry + ', ' + fruit + ', and ' + liquid + '!'
-          return smoothie }</code
-        >
-      </p>
-    </div>
-
-    <div class="home-button">
-      <a href="index.html">
-        <button type="button">Back to Home</button>
-      </a>
-    </div>
+    <footer>
+      <p>&copy; 2026 Dave Lepou</p>
+    </footer>
   </body>
 </html>

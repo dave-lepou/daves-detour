@@ -20,6 +20,9 @@ body {
   background-position: center;
   background-attachment: fixed;
   min-height: 100vh;
+  /* Desktop side padding to reveal background & frame content */
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .container {
@@ -307,6 +310,12 @@ span {
 }
 
 @media (max-width: 960px) {
+  /* Reduce body side padding on tablets to preserve screen real estate */
+  body {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+
   header,
   main,
   footer,
@@ -337,6 +346,12 @@ span {
 }
 
 @media (max-width: 600px) {
+  /* Minimize side padding on mobile phones for maximum readable space */
+  body {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+
   h1 {
     font-size: 1.5rem;
   }
