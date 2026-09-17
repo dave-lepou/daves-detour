@@ -68,6 +68,7 @@ h1,
 h2 {
   margin-top: 0;
   color: #047f5c;
+  text-align: center;
 }
 
 h1 {
@@ -302,6 +303,52 @@ span {
   text-align: center;
 }
 
+.tapa-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.tapa-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tapa-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.tapa-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+}
+
+.tapa-content {
+  max-height: 0;
+  overflow: hidden;
+  transition:
+    max-height 0.4s ease-out,
+    padding 0.3s ease;
+  background-color: #ffffff;
+  padding: 0 1.5rem;
+}
+
+.tapa-card.active .tapa-content {
+  max-height: 300px;
+  padding: 1.5rem;
+}
+
 .home-button {
   text-align: center;
   margin: 20px 0;
@@ -324,7 +371,6 @@ span {
 }
 
 @media (max-width: 960px) {
-  /* Reduce body side padding on tablets to preserve screen real estate */
   body {
     padding-left: 4%;
     padding-right: 4%;
@@ -364,7 +410,6 @@ span {
 }
 
 @media (max-width: 600px) {
-  /* Minimize side padding on mobile phones for maximum readable space */
   body {
     padding-left: 2%;
     padding-right: 2%;
@@ -383,8 +428,12 @@ span {
   }
 
   .topic-intro {
-    margin: 5px 0;
-    padding: 5px;
+    max-width: 960px;
+    margin: 0 auto 2rem auto;
+    padding: 10px;
+    border-bottom: 10px double #679f8f;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
   }
 
   .question-one,
