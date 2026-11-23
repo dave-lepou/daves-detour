@@ -1,4 +1,15 @@
 {
+  "name": "daves-detour",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
@@ -15,3 +26,4 @@
     "vite": "^8.3.8"
   }
 }
+

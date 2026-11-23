@@ -1,7 +1,267 @@
 @import 'tailwindcss';
 
-@layer utilities {
-  .border-double-emerald {
-    border-bottom: 10px double #679f8f;
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', 'Lucida Sans', sans-serif;
+    line-height: 1.65;
+    color: #ecfdf8;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
   }
+
+  h1,
+  h2 {
+    color: #fdf8e7;
+  }
+
+  h3 {
+    color: #a9f0dc;
+  }
+
+  a {
+    color: #7ef5d0;
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.55s ease-out both;
+}
+
+.border-double-emerald {
+  border-bottom: 10px double #679f8f;
+}
+
+.font-lucida {
+  font-family:
+    'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Blog Post Typography & Centring */
+.blog-article {
+  font-family: 'Lora', Georgia, serif;
+  text-align: center;
+  color: #ecfdf8;
+  font-size: 1.15rem;
+  line-height: 1.85;
+}
+
+.blog-article h1,
+.blog-article h2,
+.blog-article h3,
+.blog-article h4,
+.blog-article [class*='text-'][class*='font-bold'],
+.blog-article [style] {
+  text-align: center;
+}
+
+.blog-article h2,
+.blog-article h2[style],
+.blog-article h2[class] {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(1.6rem, 3.2vw, 2.15rem) !important;
+  font-weight: 700 !important;
+  color: #fdf8e7 !important;
+  text-shadow: 0 2px 10px rgba(4, 127, 92, 0.85) !important;
+  text-align: center !important;
+  margin: 2rem auto 0.9rem !important;
+}
+
+.blog-article h3,
+.blog-article h3[style],
+.blog-article h3[class] {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: clamp(1.25rem, 2.5vw, 1.6rem) !important;
+  font-weight: 700 !important;
+  color: #7ef5d0 !important;
+  text-align: center !important;
+  margin: 1.5rem auto 0.65rem !important;
+}
+
+.blog-article h4,
+.blog-article h4[style],
+.blog-article h4[class],
+.blog-article h5,
+.blog-article h6,
+.blog-article dt,
+.blog-article label {
+  font-family: 'Plus Jakarta Sans', sans-serif !important;
+  font-size: 1.2rem !important;
+  font-weight: 700 !important;
+  color: #fdf8e7 !important;
+  text-align: center !important;
+  margin-top: 1rem !important;
+  margin-bottom: 0.45rem !important;
+}
+
+.blog-article p,
+.blog-article p[style],
+.blog-article p[class] {
+  font-family: 'Lora', Georgia, serif !important;
+  font-size: 1.15rem !important;
+  line-height: 1.85 !important;
+  color: #ecfdf8 !important;
+  text-align: center !important;
+  max-width: 68ch;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-bottom: 1.1rem !important;
+}
+
+.blog-article ul,
+.blog-article ol,
+.blog-article ul[class],
+.blog-article ol[class] {
+  font-family: 'Lora', Georgia, serif !important;
+  font-size: 1.12rem !important;
+  line-height: 1.8 !important;
+  color: #ecfdf8 !important;
+  list-style-position: inside !important;
+  padding-left: 0 !important;
+  text-align: center !important;
+  max-width: 64ch;
+  margin: 0 auto 1.25rem !important;
+}
+
+.blog-article li,
+.blog-article li[style],
+.blog-article li[class] {
+  text-align: center !important;
+  color: #ecfdf8 !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.blog-article strong,
+.blog-article b,
+.blog-article strong[style],
+.blog-article strong[class] {
+  color: #7ef5d0 !important;
+  font-weight: 700 !important;
+}
+
+.blog-article dd,
+.blog-article div,
+.blog-article span:not([class*='rounded-full']):not([class*='bg-']) {
+  color: #ecfdf8 !important;
+  text-align: center !important;
+}
+
+/* Keep "ACHIEVED" & "PARTIALLY ACHIEVED" status badges dark text on bright pill backgrounds */
+.blog-article span[class*='rounded-full'],
+.blog-article span[class*='bg-[#5debc0]'],
+.blog-article span[class*='bg-emerald'],
+.blog-article span[class*='bg-green'],
+.blog-article span[class*='bg-amber'],
+.blog-article span[class*='bg-yellow'] {
+  color: #022c22 !important;
+  font-weight: 800 !important;
+}
+
+/* Darken light/white card surfaces inside blog posts */
+.blog-article > div,
+.blog-article section,
+.blog-article [class*='bg-white'],
+.blog-article [class*='bg-slate-50'],
+.blog-article [class*='bg-slate-100'],
+.blog-article [class*='bg-gray-50'],
+.blog-article [class*='bg-gray-100'],
+.blog-article [class*='bg-\[aliceblue\]'],
+.blog-article [style*='aliceblue'],
+.blog-article [style*='white'],
+.blog-article [style*='#fff'],
+.blog-article [style*='#ffffff'],
+.blog-article [style*='backgroundColor'] {
+  background-color: rgba(4, 34, 28, 0.9) !important;
+  border: 1.5px solid rgba(126, 245, 208, 0.42) !important;
+  border-radius: 1.25rem !important;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Force dark background & bright readable text on opened dropdown / accordion panels */
+.blog-article details[open],
+.blog-article details[open] > div,
+.blog-article [role='region'],
+.blog-article [aria-expanded='true'] + div,
+.blog-article [class*='dropdown'],
+.blog-article [class*='accordion'],
+.blog-article [class*='collapse'],
+.blog-article [class*='panel'] {
+  background-color: #021a15 !important;
+  background-image: none !important;
+  color: #ecfdf8 !important;
+  border: 1.5px solid rgba(93, 235, 192, 0.5) !important;
+  border-radius: 1rem !important;
+}
+
+.blog-article details[open] div,
+.blog-article details[open] p,
+.blog-article details[open] li,
+.blog-article
+  details[open]
+  span:not([class*='rounded-full']):not([class*='bg-']),
+.blog-article [role='region'] div,
+.blog-article [role='region'] p,
+.blog-article [role='region'] li,
+.blog-article
+  [role='region']
+  span:not([class*='rounded-full']):not([class*='bg-']),
+.blog-article [aria-expanded='true'] + div div,
+.blog-article [aria-expanded='true'] + div p,
+.blog-article [aria-expanded='true'] + div li,
+.blog-article
+  [aria-expanded='true']
+  + div
+  span:not([class*='rounded-full']):not([class*='bg-']) {
+  background-color: transparent !important;
+  color: #ecfdf8 !important;
+  text-align: center !important;
+}
+
+.blog-article details h2,
+.blog-article details h3,
+.blog-article details h4,
+.blog-article [role='region'] h2,
+.blog-article [role='region'] h3,
+.blog-article [role='region'] h4,
+.blog-article [aria-expanded='true'] + div h2,
+.blog-article [aria-expanded='true'] + div h3,
+.blog-article [aria-expanded='true'] + div h4 {
+  color: #fdf8e7 !important;
+}
+
+.blog-article button,
+.blog-article button[style],
+.blog-article summary {
+  background-color: #043328 !important;
+  color: #fdf8e7 !important;
+  cursor: pointer;
 }
