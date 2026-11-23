@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { blogPosts } from '../data/posts'
+import { useAuth } from '../context/AuthContext'
+import AuthModal from './AuthModal'
 
 interface LayoutProps {
   title: string
@@ -19,6 +21,8 @@ export default function Layout({
 }: LayoutProps) {
   const shouldShowHomeButton = showBackButton && !hideBackButton
 
+  const { user, signOut } = useAuth()
+  const [authOpen, setAuthOpen] = useState(false)
   const [blogMenuOpen, setBlogMenuOpen] = useState(false)
   const [activeCategory, setActiveCategory] = useState<'tech' | 'core'>('tech')
   const navRef = useRef<HTMLElement>(null)
@@ -78,7 +82,7 @@ export default function Layout({
         }}
       >
         <div>
-          {/* Top Navigation Bar: Home + About + Blog Dropdown */}
+          {/* Top Navigation Bar: Home + About + Blog Dropdown + Auth */}
           <nav
             ref={navRef}
             aria-label="Primary Navigation"
@@ -95,7 +99,9 @@ export default function Layout({
             <div
               style={{
                 display: 'inline-flex',
+                flexWrap: 'wrap',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '0.5rem',
                 padding: '0.45rem 0.85rem',
                 borderRadius: '999px',
@@ -298,6 +304,50 @@ export default function Layout({
                   </div>
                 )}
               </div>
+
+              {/* Sign In / Sign Out Button */}
+              {user ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBlogMenuOpen(false)
+                    signOut()
+                  }}
+                  title={`Signed in as ${user.email ?? 'member'}`}
+                  style={{
+                    padding: '0.4rem 0.95rem',
+                    borderRadius: '999px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: '#fecaca',
+                    backgroundColor: 'rgba(153, 27, 27, 0.45)',
+                    border: '1px solid rgba(248, 113, 113, 0.55)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBlogMenuOpen(false)
+                    setAuthOpen(true)
+                  }}
+                  style={{
+                    padding: '0.4rem 0.95rem',
+                    borderRadius: '999px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: '#022c22',
+                    backgroundColor: '#5debc0',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign In
+                </button>
+              )}
             </div>
           </nav>
 
@@ -439,6 +489,8 @@ export default function Layout({
           </p>
         </footer>
       </div>
+
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
     </div>
   )
 }
