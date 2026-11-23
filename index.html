@@ -1,114 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Character encoding - tells browser how to read the text -->
     <meta charset="UTF-8" />
-
-    <!-- Page title - shows in browser tab -->
-    <title>Dave's Detour - Dev Academy Blog</title>
-
-    <!-- Viewport meta tag makes your site responsive on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <!-- Link to your external CSS file -->
-    <link rel="stylesheet" href="styles/main.css" />
+    <title>Dave's Detour - Dev Academy Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Pacifico&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
-
-  <body>
-    <!-- Header section - typically contains site title and intro -->
-    <header>
-      <h1>Dave's Detour</h1>
-      <p>
-        Welcome to Dave's Detour - a little side road into something completely
-        new for me. Talofa, my name is Dave Lepou, and this blog is where i'll
-        document my experiences as I learn the fundamentals of software
-        development. Along the way, i'll record my reflections, challenges,
-        discoveries and progress, including all the things that go wrong (LOL)
-        and the lessons i learn from them. Let's see where this detour takes me!
-      </p>
-    </header>
-
-    <!-- Main content area - contains the primary content of your page -->
-    <main>
-      <!-- Welcome/About section with text and image side by side -->
-      <section class="welcome-section">
-        <div class="welcome-text">
-          <h1>Dave Lepou</h1>
-          <p><span>Age:</span> 38</p>
-          <p><span>Hometown:</span> Wainuiomata, Wellington, NZ</p>
-          <p><span>Where i live:</span> Plimmerton, Porirua</p>
-          <p><span>Current Study:</span> Dev Academy</p>
-          <p>
-            <span>A goal i have:</span> To complete my study and become a
-            successful software developer
-          </p>
-        </div>
-
-        <!-- Image container - add a photo of yourself or something you like -->
-        <div class="welcome-image">
-          <img src="images/profile-picture.png" alt="Dave Lepou" />
-        </div>
-      </section>
-
-      <!-- Blog posts section - organize your blog post links -->
-      <section class="blog-section">
-        <h1>My Blog Posts</h1>
-
-        <!-- Technical blog posts -->
-        <div class="blog-category">
-          <h3>💻 Tech</h3>
-          <nav>
-            <ul>
-              <!-- Link to te-houtaewa-template.html -->
-              <li>
-                <a href="blog/te-houtaewa-template.html"
-                  >The Story of Te Houtaewa</a
-                >
-              </li>
-              <li>
-                <a href="/blog-posts/html-css.html">HTML and CSS Blog</a>
-              </li>
-              <li>
-                <a href="/blog-posts/js-fundamentals.html"
-                  >JavaScript Fundamentals</a
-                >
-              </li>
-              <!-- TODO: Add links to your technical blog posts as you write them -->
-            </ul>
-          </nav>
-        </div>
-
-        <!-- Core/Human Skills blog posts -->
-        <div class="blog-category">
-          <h3>🌱 Core</h3>
-          <nav>
-            <ul>
-              <li>
-                <a href="/blog-posts/emotional-intellegence.html"
-                  >Emotional Intelligence</a
-                >
-              </li>
-              <li>
-                <a href="/blog-posts/neuroplasticity.html"
-                  >A commitment to Growth and Learning Development</a
-                >
-              </li>
-              </li>
-              <li>
-                <a href="/blog-posts/te-whare-tapa-wha.html"
-                  >My Hauora Plan</a
-                >
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer section - appears at bottom of every page -->
-    <footer>
-      <!-- TODO: Update with your name and current year -->
-      <p>&copy; 2026 Dave Lepou</p>
-    </footer>
+  <body class="min-h-screen">
+    <div id="root"></div>
+    <script type="module" src="/source/main.tsx"></script>
   </body>
 </html>

@@ -1,23 +1,15 @@
 {
-  "name": "blog",
+  "name": "daves-detour",
+  "private": true,
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dave-lepou/blog.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/dave-lepou/blog/issues"
-  },
-  "homepage": "https://github.com/dave-lepou/blog#readme",
   "dependencies": {
     "react": "^19.3.1",
     "react-dom": "^19.3.1",
@@ -25,8 +17,13 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.3.5",
+    "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }
 }
+
