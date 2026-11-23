@@ -10,7 +10,7 @@ interface TapaDomain {
 const domains: TapaDomain[] = [
   {
     title: 'Taha Tinana (Physical Wellbeing)',
-    image: 'images/tinana.png',
+    image: './images/tinana.png',
     alt: 'Taha Tinana - Physical Wellbeing',
     commitments: [
       'Go to the gym to do my daily workout',
@@ -20,7 +20,7 @@ const domains: TapaDomain[] = [
   },
   {
     title: 'Taha Hinengaro (Mental & Emotional Wellbeing)',
-    image: 'images/hinengaro.png',
+    image: './images/hinengaro.png',
     alt: 'Taha Hinengaro - Mental Wellbeing',
     commitments: [
       'Journal after study / coding sessions.',
@@ -29,7 +29,7 @@ const domains: TapaDomain[] = [
   },
   {
     title: 'Taha Wairua (Spiritual Wellbeing)',
-    image: 'images/wairua.jpg',
+    image: './images/wairua.jpg',
     alt: 'Taha Wairua - Spiritual Wellbeing',
     commitments: [
       'Stick to my daily prayer and devotional times - reading and listening to scripture',
@@ -38,7 +38,7 @@ const domains: TapaDomain[] = [
   },
   {
     title: 'Taha Whānau (Family & Social Wellbeing)',
-    image: 'images/whanau.jpeg',
+    image: './images/whanau.jpeg',
     alt: 'Taha Whānau - Family & Social Wellbeing',
     commitments: [
       'Spend quality time with my family',
@@ -48,7 +48,7 @@ const domains: TapaDomain[] = [
   },
   {
     title: 'Te Whenua (Your Environment)',
-    image: 'images/whenua.jpg',
+    image: './images/whenua.jpg',
     alt: 'Te Whenua - Your Environment',
     commitments: [
       'Spending time outdoors',

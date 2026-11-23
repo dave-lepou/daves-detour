@@ -124,7 +124,7 @@ export default function About() {
             {/* Oriwa's Card */}
             <BaseballCard
               cardNumber="#002"
-              badge="RISING STAR"
+              badge="PRINCESS"
               name="Oriwa"
               subtitle="Adventurous First-Year"
               image="./images/oriwa-card.jpg"
@@ -147,13 +147,14 @@ export default function About() {
             {/* Maioha-Mataio's Card */}
             <BaseballCard
               cardNumber="#003"
-              badge="ROOKIE"
+              badge="MAH-MAN"
               name="Maioha-Mataio"
               subtitle="Little Brother · Big Energy"
               image="./images/maioha-mataio.jpg"
               ageLabel="3 YRS"
               accentColor="#f3d266"
               stats={[
+                { label: 'DOB', value: '11/09/2023' },
                 { label: 'Age', value: '3 years old' },
                 { label: 'Hometown', value: 'Plimmerton, Porirua' },
                 { label: 'Nickname', value: 'Tails' },
@@ -177,7 +178,7 @@ export default function About() {
               ageLabel="GOOD GIRL"
               accentColor="#fda4af"
               stats={[
-                { label: 'Position', value: 'Loyal Companion & Security' },
+                { label: 'Position', value: 'Loyal Companion' },
                 { label: 'Hometown', value: 'Plimmerton, Porirua' },
                 { label: 'Nickname', value: 'Darling' },
                 {
