@@ -48,6 +48,14 @@ export default function Talanoa() {
 
   // READ: Anyone can read
   async function fetchEntries() {
+    if (!supabase) {
+      setError(
+        'Supabase is not configured. Please check your environment variables.',
+      )
+      setLoading(false)
+      return
+    }
+
     setLoading(true)
     setError(null)
 
@@ -74,6 +82,13 @@ export default function Talanoa() {
     e.preventDefault()
     if (!user) {
       setError('Please sign in using the top navigation bar to post.')
+      return
+    }
+
+    if (!supabase) {
+      setError(
+        'Supabase is not configured. Please check your environment variables.',
+      )
       return
     }
 
@@ -127,6 +142,14 @@ export default function Talanoa() {
   // UPDATE: Owner only
   async function handleUpdate(id: string) {
     if (!user) return
+
+    if (!supabase) {
+      setError(
+        'Supabase is not configured. Please check your environment variables.',
+      )
+      return
+    }
+
     const cleanName = editAuthorName.trim()
     const cleanRole = editRoleContext.trim()
     const cleanMessage = editMessage.trim()
@@ -161,6 +184,13 @@ export default function Talanoa() {
   // DELETE: Owner only
   async function handleDelete(id: string) {
     if (!user) return
+
+    if (!supabase) {
+      setError(
+        'Supabase is not configured. Please check your environment variables.',
+      )
+      return
+    }
 
     setDeletingId(id)
     setError(null)
