@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, type ReactNode } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { blogPosts } from '../data/posts'
+import { useAuth } from '../context/AuthContext'
+import AuthModal from './AuthModal'
 
 interface LayoutProps {
   title: string
@@ -19,16 +21,29 @@ export default function Layout({
 }: LayoutProps) {
   const shouldShowHomeButton = showBackButton && !hideBackButton
 
+  const { user, signOut } = useAuth()
+  const [authOpen, setAuthOpen] = useState(false)
   const [blogMenuOpen, setBlogMenuOpen] = useState(false)
-  const [activeCategory, setActiveCategory] = useState<'tech' | 'core'>('tech')
+  const [activeCategory, setActiveCategory] = useState<
+    'tech' | 'core' | 'agile'
+  >('tech')
   const navRef = useRef<HTMLElement>(null)
   const location = useLocation()
 
   const isHome = location.pathname === '/'
   const isAbout = location.pathname === '/about'
+  const isTalanoa = location.pathname === '/talanoa'
 
   const techPosts = blogPosts.filter((p) => p.category === 'tech')
   const corePosts = blogPosts.filter((p) => p.category === 'core')
+  const agilePosts = blogPosts.filter((p) => p.category === 'agile')
+
+  const visiblePosts =
+    activeCategory === 'tech'
+      ? techPosts
+      : activeCategory === 'core'
+        ? corePosts
+        : agilePosts
 
   // Close dropdown when clicking outside
   useEffect(() => {
@@ -78,7 +93,7 @@ export default function Layout({
         }}
       >
         <div>
-          {/* Top Navigation Bar: Home + About + Blog Dropdown */}
+          {/* Top Navigation Bar: Home + About + Blog Dropdown + Auth */}
           <nav
             ref={navRef}
             aria-label="Primary Navigation"
@@ -95,7 +110,9 @@ export default function Layout({
             <div
               style={{
                 display: 'inline-flex',
+                flexWrap: 'wrap',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '0.5rem',
                 padding: '0.45rem 0.85rem',
                 borderRadius: '999px',
@@ -145,6 +162,26 @@ export default function Layout({
                 About
               </Link>
 
+              <Link
+                to="/talanoa"
+                onClick={() => setBlogMenuOpen(false)}
+                style={{
+                  padding: '0.4rem 1rem',
+                  borderRadius: '999px',
+                  fontSize: '0.95rem',
+                  fontWeight: 700,
+                  color: isTalanoa ? '#022c22' : '#e8fbf5',
+                  backgroundColor: isTalanoa ? '#5debc0' : 'transparent',
+                  textDecoration: 'none',
+                  transition: 'all 150ms ease',
+                }}
+                className={
+                  isTalanoa ? '' : 'hover:bg-[#047f5c] hover:text-[#5debc0]'
+                }
+              >
+                Talanoa
+              </Link>
+
               {/* Blog Dropdown Trigger */}
               <div style={{ position: 'relative' }}>
                 <button
@@ -172,7 +209,7 @@ export default function Layout({
                   </span>
                 </button>
 
-                {/* Dropdown Menu: Technical & Core Tabs */}
+                {/* Dropdown Menu: Technical, Core & Agile Tabs */}
                 {blogMenuOpen && (
                   <div
                     style={{
@@ -180,7 +217,7 @@ export default function Layout({
                       top: 'calc(100% + 0.65rem)',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      width: 'min(360px, 88vw)',
+                      width: 'min(430px, 92vw)',
                       borderRadius: '1rem',
                       backgroundColor: 'rgba(2, 6, 23, 0.94)',
                       border: '2px solid #5debc0',
@@ -194,8 +231,8 @@ export default function Layout({
                     <div
                       style={{
                         display: 'grid',
-                        gridTemplateColumns: '1fr 1fr',
-                        gap: '0.4rem',
+                        gridTemplateColumns: '1fr 1fr 1.2fr',
+                        gap: '0.35rem',
                         marginBottom: '0.75rem',
                         padding: '0.25rem',
                         borderRadius: '0.75rem',
@@ -206,9 +243,9 @@ export default function Layout({
                         type="button"
                         onClick={() => setActiveCategory('tech')}
                         style={{
-                          padding: '0.45rem 0.6rem',
+                          padding: '0.45rem 0.5rem',
                           borderRadius: '0.55rem',
-                          fontSize: '0.85rem',
+                          fontSize: '0.8rem',
                           fontWeight: 700,
                           border: 'none',
                           cursor: 'pointer',
@@ -220,15 +257,15 @@ export default function Layout({
                             activeCategory === 'tech' ? '#e8fbf5' : '#94a3b8',
                         }}
                       >
-                        💻 Technical ({techPosts.length})
+                        💻 Tech ({techPosts.length})
                       </button>
                       <button
                         type="button"
                         onClick={() => setActiveCategory('core')}
                         style={{
-                          padding: '0.45rem 0.6rem',
+                          padding: '0.45rem 0.5rem',
                           borderRadius: '0.55rem',
-                          fontSize: '0.85rem',
+                          fontSize: '0.8rem',
                           fontWeight: 700,
                           border: 'none',
                           cursor: 'pointer',
@@ -241,6 +278,43 @@ export default function Layout({
                         }}
                       >
                         🌱 Core ({corePosts.length})
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => setActiveCategory('agile')}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          gap: '0.3rem',
+                          padding: '0.45rem 0.5rem',
+                          borderRadius: '0.55rem',
+                          fontSize: '0.8rem',
+                          fontWeight: 700,
+                          border: 'none',
+                          cursor: 'pointer',
+                          backgroundColor:
+                            activeCategory === 'agile'
+                              ? '#047f5c'
+                              : 'transparent',
+                          color:
+                            activeCategory === 'agile' ? '#e8fbf5' : '#94a3b8',
+                        }}
+                      >
+                        <span>⚡ Agile ({agilePosts.length})</span>
+                        <span
+                          style={{
+                            fontSize: '0.6rem',
+                            fontWeight: 800,
+                            padding: '1px 6px',
+                            borderRadius: '999px',
+                            backgroundColor: '#5debc0',
+                            color: '#022c22',
+                            lineHeight: 1.3,
+                          }}
+                        >
+                          NEW
+                        </span>
                       </button>
                     </div>
 
@@ -255,49 +329,93 @@ export default function Layout({
                         gap: '0.35rem',
                       }}
                     >
-                      {(activeCategory === 'tech' ? techPosts : corePosts).map(
-                        (post) => (
-                          <li key={post.slug}>
-                            <Link
-                              to={`/post/${post.slug}`}
-                              onClick={() => setBlogMenuOpen(false)}
-                              style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'space-between',
-                                gap: '0.5rem',
-                                padding: '0.5rem 0.7rem',
-                                borderRadius: '0.6rem',
-                                fontSize: '0.9rem',
-                                fontWeight: 600,
-                                color: '#e8fbf5',
-                                textDecoration: 'none',
-                              }}
-                              className="hover:bg-[#047f5c]/60 hover:text-[#5debc0]"
-                            >
-                              <span>→ {post.title}</span>
-                              {post.slug === 'learning-plan' && (
-                                <span
-                                  style={{
-                                    fontSize: '0.65rem',
-                                    fontWeight: 800,
-                                    padding: '2px 7px',
-                                    borderRadius: '999px',
-                                    backgroundColor: '#5debc0',
-                                    color: '#022c22',
-                                  }}
-                                >
-                                  NEW
-                                </span>
-                              )}
-                            </Link>
-                          </li>
-                        ),
-                      )}
+                      {visiblePosts.map((post) => (
+                        <li key={post.slug}>
+                          <Link
+                            to={`/post/${post.slug}`}
+                            onClick={() => setBlogMenuOpen(false)}
+                            style={{
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'space-between',
+                              gap: '0.5rem',
+                              padding: '0.5rem 0.7rem',
+                              borderRadius: '0.6rem',
+                              fontSize: '0.9rem',
+                              fontWeight: 600,
+                              color: '#e8fbf5',
+                              textDecoration: 'none',
+                            }}
+                            className="hover:bg-[#047f5c]/60 hover:text-[#5debc0]"
+                          >
+                            <span>→ {post.title}</span>
+                            {(post.slug === 'learning-plan' ||
+                              post.category === 'agile') && (
+                              <span
+                                style={{
+                                  flexShrink: 0,
+                                  fontSize: '0.65rem',
+                                  fontWeight: 800,
+                                  padding: '2px 7px',
+                                  borderRadius: '999px',
+                                  backgroundColor: '#5debc0',
+                                  color: '#022c22',
+                                }}
+                              >
+                                NEW
+                              </span>
+                            )}
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 )}
               </div>
+
+              {/* Sign In / Sign Out Button */}
+              {user ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBlogMenuOpen(false)
+                    signOut()
+                  }}
+                  title={`Signed in as ${user.email ?? 'member'}`}
+                  style={{
+                    padding: '0.4rem 0.95rem',
+                    borderRadius: '999px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: '#fecaca',
+                    backgroundColor: 'rgba(153, 27, 27, 0.45)',
+                    border: '1px solid rgba(248, 113, 113, 0.55)',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setBlogMenuOpen(false)
+                    setAuthOpen(true)
+                  }}
+                  style={{
+                    padding: '0.4rem 0.95rem',
+                    borderRadius: '999px',
+                    fontSize: '0.85rem',
+                    fontWeight: 700,
+                    color: '#022c22',
+                    backgroundColor: '#5debc0',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                >
+                  Sign In
+                </button>
+              )}
             </div>
           </nav>
 
@@ -439,6 +557,8 @@ export default function Layout({
           </p>
         </footer>
       </div>
+
+      <AuthModal isOpen={authOpen} onClose={() => setAuthOpen(false)} />
     </div>
   )
 }
