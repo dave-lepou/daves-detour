@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
 import PostPage from './pages/PostPage'
+import TalanoaPage from './pages/TalanoaPage'
 
 export default function AppRoutes() {
   return (
@@ -9,6 +10,7 @@ export default function AppRoutes() {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/post/:slug" element={<PostPage />} />
+      <Route path="/talanoa" element={<TalanoaPage />} />
     </Routes>
   )
 }
